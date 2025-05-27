@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "homepage": "https://Vibhav-Misra.github.io/vibhavmisra.github.io",
+  "homepage": "https://abhinav0023.github.io/VibhavMisra",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -15,6 +15,7 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@tailwindcss/vite": "^4.1.4",
+    "dotenv": "^16.5.0",
     "emailjs-com": "^3.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
