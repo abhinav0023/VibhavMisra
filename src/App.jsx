@@ -7,21 +7,19 @@ import { Home } from "./components/sections/Home";
 import { About } from "./components/sections/About";
 import { Projects } from "./components/sections/Projects";
 import { Contact } from "./components/sections/Contact";
+
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // refresh to home section
+  // Always scroll to top when the app loads
   useEffect(() => {
-    const homeSection = document.getElementById("home__Section");
-    if (homeSection) {
-      homeSection.scrollIntoView({ behavior: "smooth" });
-    }
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }, []);
 
   return (
     <>
-      {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}{" "}
+      {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
       <div
         className={`min-h-screen transition-opacity duration-300 ${
           isLoaded ? "opacity-100" : "opacity-0"
@@ -29,10 +27,11 @@ function App() {
       >
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-          <Home />
+
+        <Home />
         <Projects />
         <About />
-        <Contact/>
+        <Contact />
       </div>
     </>
   );
